@@ -5,26 +5,27 @@ public class Square extends Quadrilateral{
         super(side, side);
     }
 
-    @Override
-    public void setLength(double length) {
-
-    }
-
-    @Override
-    public void setWidth(double width) {
-
-    }
-
-    //=====Sophie's way=====//
+    // i didnt make this as EXPLICIT as it should've been like in sophie's
 //    @Override
 //    public void setLength(double length) {
-//        this.length = length;
+//
 //    }
 //
 //    @Override
 //    public void setWidth(double width) {
-//        this.width = width;
+//
 //    }
+
+    //=====Sophie's way=====//
+    @Override
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    @Override
+    public void setWidth(double width) {
+        this.width = width;
+    }
 //
     //^^^^^Sophie's way^^^^^//
 
