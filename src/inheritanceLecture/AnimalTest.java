@@ -57,7 +57,7 @@ public class AnimalTest {
         dog.fetchBall();
 
 
-//        makeAnimalsNoisy(animals);
+//        makeAnimalsNoisy(abstractLecture.animals.animals);
     }
 
     private static void makeAnimalsNoisy(Animal[] animals) {
