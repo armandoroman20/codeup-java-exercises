@@ -23,9 +23,9 @@ public class Input {
 //
 //        //yesNO()
 //
-        System.out.print("Will you continue? ");
-        boolean yesNo = in.yesNo();
-        System.out.println(yesNo);
+//        System.out.print("Will you continue? ");
+//        boolean yesNo = in.yesNo();
+//        System.out.println(yesNo);
 
         // getInt()
 
@@ -40,47 +40,59 @@ public class Input {
 //        System.out.println("You entered " + numInRange);
 
 
-//        System.out.print("Please enter a number");
-//        double dNum = in.getDouble();
-//        System.out.println("You entered: " + dNum);
+        System.out.print("Please enter a number");
+        double dNum = in.getDouble();
+        System.out.println("You entered: " + dNum);
 
 //        System.out.print("Please enter a whole number between 1 and 10: ");
 //        double dNumInRange = in.getDouble(1, 10);
 //        System.out.println("You entered " + dNumInRange);
     }
 
+
+
     public String getString() {
         return sc.nextLine();
     }
+//
+//
+//
+//    public boolean yesNo() {
+//        // below is to clear out
+//        String input = sc.next();
+//        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
+//    }
 
+//    public int getInt(){
+//        String userInput = getString();
+//        try{
+//            int userInt = Integer.valueOf(userInput);
+//            return userInt;
+//        }catch (NumberFormatException e){
+//            System.out.println("Invalid input! Please enter an integer.");
+//            return getInt();
+//        }
 
-    public boolean yesNo() {
-        // below is to clear out
-        String input = sc.next();
-        return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
-    }
+//        if(sc.hasNextInt()) {
+//            return sc.nextInt();
+//        } else {
+//            System.out.println("Error, please enter a valid integer");
+//            //sc.next() will clear out scanner so i won't get a stack overflow error
+//            sc.next();
+//            return getInt();
+//        }
+//    }
 
-    public int getInt(){
-        if(sc.hasNextInt()) {
-            return sc.nextInt();
-        } else {
-            System.out.println("Error, please enter a valid integer");
-            //sc.next() will clear out scanner so i won't get a stack overflow error
-            sc.next();
-            return getInt();
-        }
-    }
-
-    public int getInt(int min, int max){
-        int userInt = getInt();
-        if (userInt >= min && userInt <= max) {
-            return userInt;
-        } else {
-            //if given wrong input ill just rerun THIS method
-            System.out.println("Please enter an integer between: " + min + " " + max);
-            return getInt(min, max);
-        }
-    }
+//    public int getInt(int min, int max){
+//        int userInt = getInt();
+//        if (userInt >= min && userInt <= max) {
+//            return userInt;
+//        } else {
+//            //if given wrong input ill just rerun THIS method
+//            System.out.println("Please enter an integer between: " + min + " " + max);
+//            return getInt(min, max);
+//        }
+//    }
 
 
 //    public double getDouble(double min, double max){
@@ -88,13 +100,22 @@ public class Input {
 //    }
 //
     public double getDouble(){
-        if(sc.hasNextDouble()) {
-            return sc.nextDouble();
-        } else {
-            System.out.println("Error, please enter a valid integer");
-            //sc.next() will clear out scanner so i won't get a stack overflow error
-            sc.next();
-            return getInt();
+        String userInput = getString();
+        try{
+            double userDouble = Double.valueOf(userInput);
+            return userDouble;
+        }catch (NumberFormatException e){
+            System.out.println("Invalid input! Please enter a valid number.");
+            return getDouble();
         }
     }
+//        if(sc.hasNextDouble()) {
+//            return sc.nextDouble();
+//        } else {
+//            System.out.println("Error, please enter a valid integer");
+//            //sc.next() will clear out scanner so i won't get a stack overflow error
+//            sc.next();
+//            return getInt();
+//        }
+//    }
 }
